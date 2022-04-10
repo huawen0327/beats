@@ -1,0 +1,20 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - C:/Users/baba/AppData/Roaming/Docker/log/host/electron-2022-03-26-19.log
+    fields:
+      log_source: messages
+    fields_under_root: true
+
+output.redis:
+  hosts: ["127.0.0.1:6379"]
+  key: test_log
+  password: ""
+  db: 0
+  bulk_max_size: 2
+
+#output.mongodb:
+#  hosts: ["127.0.0.1:6379"]
+#  db: test_log
+#  collection: test_log
